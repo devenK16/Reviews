@@ -1,55 +1,52 @@
 // Reviews.js
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Rating.css';
 
 const Reviews = () => {
   const [rating, setRating] = useState(0);
   const [hoverRating, setHoverRating] = useState(0);
+  const [showAnimation, setShowAnimation] = useState(false);
   const navigate = useNavigate();
 
   const handleRatingChange = (newRating) => {
     setRating(newRating);
-    if (newRating <= 3) {
-      navigate('/feedback', { state: { rating: newRating } });
-    } else {
-      // Redirect to Google review link for 4 or 5 star ratings
-      window.location.href = 'https://search.google.com/local/writereview?placeid=ChIJOVejjAZ_1DsRIZhuoMgNTAk';
-    }
+    setShowAnimation(true);
+
+    setTimeout(() => {
+      if (newRating <= 3) {
+        navigate('/feedback', { state: { rating: newRating } });
+      } else {
+        window.location.href = 'https://search.google.com/local/writereview?placeid=ChIJOVejjAZ_1DsRIZhuoMgNTAk';
+      }
+    }, 1000);
   };
 
-  return ( 
-    <div className="reviews-container">
+  return (
+    <div className={`reviews-container ${showAnimation ? 'animate' : ''}`}>
       <div className="reviews-content">
         <h2>Rate Your Experience</h2>
         <div className="rating-image-container">
           <img src="/rating_m_1.png" alt="Rating" className="rating-image" />
         </div>
-        
         <hr className="divider centered-divider" />
-
         <p>Please select a star below that best represents your experience.</p>
-        <div className="rating">
+        <div className={`rating ${showAnimation ? 'center-animation' : ''}`}>
           {[1, 2, 3, 4, 5].map((star) => (
             <span
               key={star}
-              className={star <= (hoverRating || rating) ? 'star active' : 'star'}
-              onClick={() => handleRatingChange(star)}
-              onMouseEnter={() => setHoverRating(star)}
-              onMouseLeave={() => setHoverRating(0)}
+              className={`star ${star <= (showAnimation ? rating : (hoverRating || rating)) ? 'active' : ''} ${showAnimation && star > rating ? 'hide' : ''}`}
+              onClick={() => !showAnimation && handleRatingChange(star)}
+              onMouseEnter={() => !showAnimation && setHoverRating(star)}
+              onMouseLeave={() => !showAnimation && setHoverRating(0)}
             >
               ★
             </span>
           ))}
         </div>
-          
       </div>
-      
-
-      {/* <hr className="divider centered-divider" /> */}
-
       <div className="rating-footer">
-        Your rating helps us improve , we appreciate your honest feedback!
+        Your rating helps us improve, we appreciate your honest feedback!
       </div>
     </div>
   );
