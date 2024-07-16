@@ -12,10 +12,13 @@ const Reviews = () => {
     setRating(newRating);
     if (newRating <= 3) {
       navigate('/feedback', { state: { rating: newRating } });
+    } else {
+      // Redirect to Google review link for 4 or 5 star ratings
+      window.location.href = 'https://search.google.com/local/reviews?placeid=ChIJOVejjAZ_1DsRIZhuoMgNTAk';
     }
   };
 
-  return (
+  return ( 
     <div className="reviews-container">
       <div className="reviews-content">
         <h2>Rate Your Experience</h2>
