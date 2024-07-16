@@ -14,7 +14,7 @@ const Reviews = () => {
       navigate('/feedback', { state: { rating: newRating } });
     } else {
       // Redirect to Google review link for 4 or 5 star ratings
-      window.location.href = 'https://search.google.com/local/reviews?placeid=ChIJOVejjAZ_1DsRIZhuoMgNTAk';
+      window.location.href = 'https://search.google.com/local/writereview?placeid=ChIJOVejjAZ_1DsRIZhuoMgNTAk';
     }
   };
 
