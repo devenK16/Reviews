@@ -1,0 +1,112 @@
+.thank-you-container {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+  padding: 20px;
+}
+
+.checkmark {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 30px auto;
+}
+
+.checkmark__check {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 10;
+  transform: translate(-50%, -50%);
+  fill: #fff;
+}
+
+.checkmark__back {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: rotate 35s linear infinite;
+}
+
+.confetti {
+  position: absolute;
+  animation: grow 1.4s cubic-bezier(0.420, 0.000, 0.275, 1.155) both;
+}
+
+.confetti-1 {
+  width: 12px;
+  height: 12px;
+  left: 10%;
+  top: 10%;
+  animation-delay: 0.7s;
+}
+
+.confetti-2 {
+  width: 18px;
+  height: 18px;
+  right: 10%;
+  top: 20%;
+  animation-delay: 1.4s;
+}
+
+.confetti-3 {
+  width: 10px;
+  height: 10px;
+  left: 15%;
+  bottom: 10%;
+  animation-delay: 2.1s;
+}
+
+.confetti-4 {
+  width: 20px;
+  height: 20px;
+  right: 20%;
+  top: 5%;
+  animation-delay: 2.8s;
+}
+
+.confetti-5 {
+  width: 14px;
+  height: 14px;
+  right: 15%;
+  bottom: 15%;
+  animation-delay: 3.5s;
+}
+
+.confetti-6 {
+  width: 10px;
+  height: 10px;
+  left: 5%;
+  top: 45%;
+  animation-delay: 4.2s;
+}
+
+.footer-text {
+  margin-top: auto;
+  width: 100%;
+  position: fixed;
+  bottom: 20px;
+  left: 0;
+  text-align: center;
+}
+
+@keyframes rotate {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes grow {
+  0%, 100% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+  }
+}

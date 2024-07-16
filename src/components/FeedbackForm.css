@@ -1,0 +1,132 @@
+.feedback-form {
+  max-width: 600px;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 5px;
+  background-color: #f0f0f0;
+  margin-bottom: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.progress-bar > div {
+  height: 100%;
+  background-color: #3f51b5;
+  transition: width 0.3s ease;
+}
+
+.question-container, form {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.question-number {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.answer-options {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.answer-options button {
+  padding: 10px 15px;
+  margin: 0 5px;
+  border: 2px solid #1a237e; /* Dark blue border */
+  background-color: #e8eaf6; /* Light blue background */
+  color: #1a237e; /* Dark blue text */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.answer-options button:hover {
+  background-color: #c5cae9; /* Slightly darker blue on hover */
+}
+
+.answer-options button.selected {
+  background-color: #3f51b5; /* Darker blue when selected */
+  color: #ffffff; /* White text for contrast */
+  border-color: #3f51b5;
+}
+
+textarea {
+  width: 85%;
+  height: 100px;
+  margin-bottom: 20px;
+  padding: 10px;
+  resize: none;
+}
+
+/* button[type="submit"], button[type="button"] {
+  padding: 10px 20px;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+} */
+
+
+button[type="button"]:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bottom-button {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+  background-color: #fff;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+}
+
+.bottom-button button {
+  padding: 10px 20px;
+  background-color: #3f51b5;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.bottom-button button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+.rating-image-container {
+  text-align: center;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.rating-image {
+  max-width: 100%;
+  height: auto;
+}
