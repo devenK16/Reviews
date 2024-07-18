@@ -15,7 +15,8 @@ const Reviews = () => {
 
     setTimeout(() => {
       if (newRating <= 3) {
-        navigate('/feedback', { state: { rating: newRating } });
+        // navigate('/feedback', { state: { rating: newRating } });
+        window.location.href = 'https://ia186u6fs18.typeform.com/to/cVcFewh5'
       } else {
         window.location.href = 'https://search.google.com/local/writereview?placeid=ChIJOVejjAZ_1DsRIZhuoMgNTAk';
       }
